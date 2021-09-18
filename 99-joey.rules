@@ -1,0 +1,8 @@
+# Please copy this file into /etc/udev/rules.d/
+#   sudo udevadm control --reload-rules
+#   sudo udevadm trigger
+# for libusb
+# ID 046d:1234 Logitech, Inc. Joey Joebags v1.0
+SUBSYSTEM=="usb",ATTR{idVendor}=="046d",ATTR{idProduct}=="1234",MODE="0666"
+KERNEL=="hidraw*",ATTRS{idVendor}=="046d",ATTRS{idProduct}=="1234",MODE="0666"
+
